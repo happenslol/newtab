@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle, keyframes } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import {
@@ -18,6 +18,8 @@ function App() {
       <Global />
       <Container>
         <Inner>
+          <h1 className="title">New Tab</h1>
+
           <Section>
             <h1 className="heading">General</h1>
 
@@ -63,6 +65,18 @@ function App() {
   )
 }
 
+const innerAnim = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
 const Inner = styled.div`
   height: 100%;
 
@@ -70,6 +84,14 @@ const Inner = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  animation: 0.2s ease-in-out 0s 1 running ${innerAnim};
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #fff;
+    opacity: 0.7;
+  }
 `
 
 const SiteIcon = styled(FontAwesomeIcon)`
@@ -98,23 +120,22 @@ const Section = styled.section`
   .heading {
     color: rgba(255, 255, 255, 0.8);
     position: absolute;
-    top: -1.3rem;
+    top: -1.25rem;
     font-size: 0.9rem;
     left: 1rem;
     background: #212121;
     padding: 0 0.4rem;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Rubik", sans-serif;
   }
 `
 
 const Global = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
-
   body {
     margin: 0;
     padding: 0;
+    font-family: "Rubik", sans-serif;
   }
 `
 
