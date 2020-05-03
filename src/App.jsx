@@ -88,9 +88,11 @@ const Inner = styled.div`
 
   .title {
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: #fff;
     opacity: 0.7;
+    user-select: none;
+    cursor: default;
   }
 `
 
@@ -113,7 +115,7 @@ const Section = styled.section`
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 1rem;
   border-radius: 4px;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   position: relative;
   padding-top: 2rem;
 
@@ -128,6 +130,8 @@ const Section = styled.section`
     font-weight: 500;
     text-transform: uppercase;
     font-family: "Rubik", sans-serif;
+    user-select: none;
+    cursor: default;
   }
 `
 
@@ -136,6 +140,7 @@ const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: "Rubik", sans-serif;
+    user-select: none;
   }
 `
 
